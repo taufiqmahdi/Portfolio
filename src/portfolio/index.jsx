@@ -130,7 +130,7 @@ const PROJECTS = [
       "Designed an idempotent /notification endpoint that safely handles Midtrans retry logic without duplicate order updates",
       "Built a reusable useMidtrans custom hook encapsulating the full Snap payment lifecycle with typed callback states",
     ],
-    github: "https://github.com/yourusername/midtrans-payment-integration",
+    github: "https://github.com/taufiqmahdi/React-Midtrans-Payment",
     live: "#",
   },
 ];
