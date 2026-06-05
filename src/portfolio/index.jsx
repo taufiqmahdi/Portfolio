@@ -100,25 +100,25 @@ const NAV_LINKS = ["About", "Projects", "Skills", "Contact"];
 
 const PROJECTS = [
   // Update these sample projects with your real work
-  // {
-  //   id: 1,
-  //   label: "01 — Featured",
-  //   name: "Project One",
-  //   tagline: "Short tagline describing what this project does.",
-  //   description:
-  //     "A brief description of your first featured project. Mention the problem it solves, the stack you used, and any results or impact you are proud of.",
-  //   stack: ["React", "TypeScript"],
-  //   highlights: [
-  //     "Key achievement or feature of this project",
-  //     "Another bullet about what makes it interesting",
-  //     "Anything measurable (performance, revenue, users, etc.)",
-  //   ],
-  //   github: "#",
-  //   live: "#",
-  // },
+  {
+    id: 1,
+    label: "01 — Featured",
+    name: "My Gift List",
+    tagline: "A gift registry web application that let users create and manage gift registries for any occasion",
+    description:
+      "A gift registry web application built with Next.js 15 (App Router) and TypeScript. Users can create and manage gift registries for any occasion, share a public link with guests, and track which gifts have been booked — all without requiring guests to register.",
+    stack: ["Next.js", "TypeScript", "Laravel", "REST API"],
+    highlights: [
+      "Working with cors, connecting both the Frontend and Backend together and make them work seamlessly, both in development and production environment",
+      "Working with REST API, handling authentication with JWT and managing state to ensure a smooth user experience",
+      "Working with email system, implementing email notifications for registry updates and guest interactions",
+    ],
+    github: "https://github.com/taufiqmahdi/MyGiftList-FE",
+    live: "https://my-gift-list-fe.vercel.app",
+  },
   {
     id: 2,
-    label: "01 — Featured",
+    label: "02 — Featured",
     name: "Midtrans Payment Integration",
     tagline:
       "Full-stack payment gateway integration with real-time webhook handling.",
@@ -131,7 +131,7 @@ const PROJECTS = [
       "Built a reusable useMidtrans custom hook encapsulating the full Snap payment lifecycle with typed callback states",
     ],
     github: "https://github.com/taufiqmahdi/React-Midtrans-Payment",
-    live: "#",
+    // live: "#",
   },
 ];
 
@@ -140,6 +140,7 @@ const SKILLS = [
     category: "Frontend",
     items: [
       "React",
+      "Next.js",
       "TypeScript",
       "React Query",
       "Tailwind CSS",
