@@ -104,17 +104,18 @@ const PROJECTS = [
     id: 1,
     label: "01 — Featured",
     name: "My Gift List",
-    tagline: "A gift registry web application that let users create and manage gift registries for any occasion",
+    tagline: "A gift registry web application that lets users create and manage gift registries for any occasion.",
     description:
-      "A gift registry web application built with Next.js 15 (App Router) and TypeScript. Users can create and manage gift registries for any occasion, share a public link with guests, and track which gifts have been booked — all without requiring guests to register.",
+      "A gift registry web application built with Next.js 15 (App Router) and TypeScript on top of a Laravel REST API. Users can create and manage gift registries for any occasion, share a public link with guests, and track which gifts have been booked — all without requiring guests to register. The live demo runs without the backend: every API call is served by an in-browser store seeded with sample registries, so you can log in with any email and password and try the full flow.",
     stack: ["Next.js", "TypeScript", "Laravel", "REST API"],
     highlights: [
-      "Working with cors, connecting both the Frontend and Backend together and make them work seamlessly, both in development and production environment",
-      "Working with REST API, handling authentication with JWT and managing state to ensure a smooth user experience",
-      "Working with email system, implementing email notifications for registry updates and guest interactions",
+      "Configured CORS so the Next.js frontend and Laravel backend work together seamlessly in both development and production",
+      "Built JWT authentication against the REST API, with route protection in Next.js middleware and state management for a smooth user experience",
+      "Implemented email notifications for registry updates and guest interactions, including booking cancellation links",
+      "Shipped a backend-free demo build that swaps the API layer for a seeded in-browser store persisted in localStorage, with a one-click reset",
     ],
     github: "https://github.com/taufiqmahdi/MyGiftList-FE",
-    live: "https://my-gift-list-fe.vercel.app",
+    live: "https://my-gift-list-fe-git-demo-taufiqmahdis-projects.vercel.app",
   },
   {
     id: 2,
@@ -823,7 +824,7 @@ function About() {
               marginBottom: 24,
             }}
           >
-            I'm Taufiq, a full stack software engineer based in Bandung with 3
+            I'm Taufiq, a full stack software engineer based in Jakarta with 3
             years of professional experience building web products. I enjoy both
             crafting polished user interfaces with React and architecting
             reliable API backends with Laravel — owning a feature end-to-end is
