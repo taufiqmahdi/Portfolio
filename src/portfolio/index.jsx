@@ -115,7 +115,7 @@ const PROJECTS = [
       "Shipped a backend-free demo build that swaps the API layer for a seeded in-browser store persisted in localStorage, with a one-click reset",
     ],
     github: "https://github.com/taufiqmahdi/MyGiftList-FE",
-    live: "https://my-gift-list-fe-git-demo-taufiqmahdis-projects.vercel.app",
+    live: "https://mygiftlist-demo.vercel.app",
   },
   // Hidden until it's ready
   // {
