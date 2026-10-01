@@ -117,23 +117,24 @@ const PROJECTS = [
     github: "https://github.com/taufiqmahdi/MyGiftList-FE",
     live: "https://my-gift-list-fe-git-demo-taufiqmahdis-projects.vercel.app",
   },
-  {
-    id: 2,
-    label: "02 — Featured",
-    name: "Midtrans Payment Integration",
-    tagline:
-      "Full-stack payment gateway integration with real-time webhook handling.",
-    description:
-      "Built a complete payment gateway integration using Midtrans Snap API, with a Go REST backend and a React frontend. The backend handles secure token generation, signature verification, and webhook processing to keep order statuses in sync. The frontend uses a custom React hook to manage the full payment lifecycle — from opening the Snap popup to handling success, pending, and failure states.",
-    stack: ["React", "TypeScript", "Go", "Gin", "Midtrans API"],
-    highlights: [
-      "Implemented SHA-512 signature verification on the webhook handler to prevent spoofed payment notifications",
-      "Designed an idempotent /notification endpoint that safely handles Midtrans retry logic without duplicate order updates",
-      "Built a reusable useMidtrans custom hook encapsulating the full Snap payment lifecycle with typed callback states",
-    ],
-    github: "https://github.com/taufiqmahdi/React-Midtrans-Payment",
-    // live: "#",
-  },
+  // Hidden until it's ready
+  // {
+  //   id: 2,
+  //   label: "02 — Featured",
+  //   name: "Midtrans Payment Integration",
+  //   tagline:
+  //     "Full-stack payment gateway integration with real-time webhook handling.",
+  //   description:
+  //     "Built a complete payment gateway integration using Midtrans Snap API, with a Go REST backend and a React frontend. The backend handles secure token generation, signature verification, and webhook processing to keep order statuses in sync. The frontend uses a custom React hook to manage the full payment lifecycle — from opening the Snap popup to handling success, pending, and failure states.",
+  //   stack: ["React", "TypeScript", "Go", "Gin", "Midtrans API"],
+  //   highlights: [
+  //     "Implemented SHA-512 signature verification on the webhook handler to prevent spoofed payment notifications",
+  //     "Designed an idempotent /notification endpoint that safely handles Midtrans retry logic without duplicate order updates",
+  //     "Built a reusable useMidtrans custom hook encapsulating the full Snap payment lifecycle with typed callback states",
+  //   ],
+  //   github: "https://github.com/taufiqmahdi/React-Midtrans-Payment",
+  //   // live: "#",
+  // },
 ];
 
 const SKILLS = [
@@ -964,7 +965,12 @@ function ProjectCard({ project, index }) {
             GitHub
           </a>
           {project.live && (
-            <a href={project.live} style={chipStyle("var(--accent)", "white")}>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={chipStyle("var(--accent)", "white")}
+            >
               Live{" "}
               <svg
                 width="10"
