@@ -117,6 +117,24 @@ const PROJECTS = [
     github: "https://github.com/taufiqmahdi/MyGiftList-FE",
     live: "https://mygiftlist-demo.vercel.app",
   },
+  {
+    id: 3,
+    label: "02 — Featured",
+    name: "Laboll Football Community",
+    tagline:
+      "A community platform for finding football and mini soccer games, booking a slot, and paying in one flow.",
+    description:
+      "A web app for a Jakarta football community, built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS. Players browse match schedules from partner communities, book a slot as a player or goalkeeper, and pay through a checkout that mimics QRIS, virtual account and e-wallet payments. It also covers tournaments with team registration, a yearly membership with a 10% match discount, partner merchants, merchandise, news and a photo gallery. Auth, orders and payments are mocked in localStorage behind small modules, so a real API can replace them without touching the UI. Try it with the demo account shown in the login dialog.",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    highlights: [
+      "Built a booking checkout that prices each slot by position, applies the member discount and voucher rules, and adds a service fee",
+      "Designed a mock payment flow with a generated QR or virtual account number, a payment deadline that releases unpaid slots, and a booking-ID status check",
+      "Kept auth, orders and memberships behind API-shaped modules backed by localStorage, ready to swap for a real backend",
+      "Added schedule, tournament and merchandise browsing with filters, plus detail pages for every schedule, merchant, tournament and article",
+    ],
+    github: "https://github.com/taufiqmahdi/laboll-football-community-web",
+    live: "https://laboll-football-community-web.vercel.app",
+  },
   // Hidden until it's ready
   // {
   //   id: 2,
@@ -236,28 +254,38 @@ function CopyEmailButton({ email, style = {} }) {
   return (
     <div
       style={{
-        display: "inline-flex",
-        alignItems: window.innerWidth <= 640 ? "flex-start" : "center",
-        gap: 10,
+        display: "flex",
+        alignItems: "center",
+        gap: "10px 16px",
         flexWrap: "wrap",
-        flexDirection: window.innerWidth <= 640 ? "column" : "row",
         ...style,
       }}
     >
-      {/* Visible email address */}
-      <span
+      {/* Email address: opens the visitor's mail app */}
+      <a
+        href={`mailto:${email}`}
         style={{
-          fontFamily: "var(--font-body)",
-          fontSize: 15,
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(22px,4vw,30px)",
           fontWeight: 400,
-          color: "var(--ink)",
-          letterSpacing: "0.01em",
-          borderBottom: "1px dashed var(--border)",
-          paddingBottom: 1,
+          color: "var(--accent)",
+          textDecoration: "none",
+          borderBottom: "1px solid var(--accent)",
+          lineHeight: 1.2,
+          overflowWrap: "anywhere",
+          transition: "color 0.2s, border-color 0.2s",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.color = "var(--accent2)";
+          e.currentTarget.style.borderBottomColor = "transparent";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.color = "var(--accent)";
+          e.currentTarget.style.borderBottomColor = "var(--accent)";
         }}
       >
         {email}
-      </span>
+      </a>
 
       {/* Copy button */}
       <button
@@ -1270,6 +1298,16 @@ const inputStyle = {
   width: "100%",
 };
 
+const contactLabelStyle = {
+  fontFamily: "var(--font-body)",
+  fontSize: 11,
+  fontWeight: 500,
+  letterSpacing: "0.14em",
+  textTransform: "uppercase",
+  color: "var(--muted)",
+  marginBottom: 12,
+};
+
 function Contact() {
   const [ref, visible] = useInView();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -1361,34 +1399,36 @@ function Contact() {
           projects, and interesting collaborations.
         </p>
 
-        {/* ✅ Visible email + copy button */}
+        {/* Email directly: a link, not a field */}
+        <div
+          style={{
+            marginBottom: 44,
+            opacity: visible ? 1 : 0,
+            transition: "opacity 0.6s 0.15s",
+          }}
+        >
+          <p style={contactLabelStyle}>Email me directly</p>
+          <CopyEmailButton email={"mtaufiqmahdi@yahoo.co.id"} />
+        </div>
+
+        {/* Divider before the form */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             gap: 16,
-            flexWrap: "wrap",
-            padding: "16px 20px",
-            background: "var(--white)",
-            border: "1px solid var(--border)",
-            borderRadius: 4,
-            marginBottom: 40,
+            marginBottom: 28,
             opacity: visible ? 1 : 0,
-            transition: "opacity 0.6s 0.15s",
+            transition: "opacity 0.6s 0.18s",
           }}
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--muted)"
-            strokeWidth="1.5"
+          <span style={{ flex: 1, height: 1, background: "var(--border)" }} />
+          <span
+            style={{ ...contactLabelStyle, marginBottom: 0, whiteSpace: "nowrap" }}
           >
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-            <polyline points="22,6 12,13 2,6" />
-          </svg>
-          <CopyEmailButton email={"mtaufiqmahdi@yahoo.co.id"} />
+            Or send a message
+          </span>
+          <span style={{ flex: 1, height: 1, background: "var(--border)" }} />
         </div>
 
         {status === "success" ? (
